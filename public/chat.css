@@ -1,0 +1,43 @@
+#content{
+	padding: 25px 25px;
+	list-style: none;
+	height: 400px;
+	overflow-y: scroll;
+	/*background-color: #FAFAFA;
+	box-shadow: 1px 1px 1px black;*/
+}
+.userdata{
+	
+	text-align: center;
+}
+
+.message_other{
+	background-color: #80FF5C;
+	border-radius: 5px;
+	padding: 10px 20px;
+	margin: 10px 5px;
+	max-width: 250px;
+}
+
+.message_self{
+	background-color: #FFF25E;
+	border-radius: 5px;
+	padding: 10px 20px;
+	margin: 10px 5px 10px 300px;
+	max-width: 250px;
+}
+
+.grid2{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 700px
+	
+}
+
+.timestamp{
+	font-size: 10px;
+}
+
+.textmessage{
+	font-size: 12px;
+}
