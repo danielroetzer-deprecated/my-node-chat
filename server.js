@@ -1,20 +1,17 @@
-var express = require('express'),
+const express = require('express'),
    app = express(),
    server = require('http').createServer(app),
    io = require('socket.io').listen(server),
-   conf = require('./config.json');
-
-// Webserver
-// auf den Port der conf Datei schalten
-server.listen(conf.port);
+   conf = require('./configs/config.json');
 
 // statische Dateien ausliefern
 app.use(express.static(__dirname + '/public'));
 
+
 // wenn der Pfad / aufgerufen wird
 app.get('/', function (req, res) {
 	// so wird die Datei index.html ausgegeben
-	res.sendfile(__dirname + '/public/index.html');
+	res.sendFile(__dirname + '/views/index.html');
 });
 
 // Websocket
@@ -28,5 +25,10 @@ io.sockets.on('connection', function (socket) {
 	});
 });
 
-// Portnummer in die Konsole schreiben
-console.log('Der Server läuft nun unter http://127.0.0.1:' + conf.port + '/');
+// Webserver
+// auf den Port der conf Datei schalten
+server.listen(conf.port, function () {
+    // Portnummer in die Konsole schreiben
+    console.log('Der Server läuft nun unter http://127.0.0.1:' + conf.port + '/');
+});
+
