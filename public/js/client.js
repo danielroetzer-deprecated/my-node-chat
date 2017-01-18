@@ -1,10 +1,10 @@
 $(document).ready(function(){
 	// WebSocket
-	var socket = io.connect();
+	const socket = io.connect();
 	// neue Nachricht
 	socket.on('chat', function (data) {
-		var zeit = new Date(data.zeit);
-		var name = new String(data.name);
+		let zeit = new Date(data.zeit);
+		let name = new String(data.name);
 		
 		if (data.text == ""){
 			
@@ -52,8 +52,8 @@ $(document).ready(function(){
 	// Nachricht senden
 	function senden(){
 		// Eingabefelder auslesen
-		var name = $('#name').val();
-		var text = $('#text').val();
+		let name = $('#name').val();
+		let text = $('#text').val();
 		// Socket senden
 		socket.emit('chat', { name: name, text: text });
 		// Text-Eingabe leeren
